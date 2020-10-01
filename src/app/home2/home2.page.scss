@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: lato, sans-serif;
+  }
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .top-header {
+    margin-top: 1px;
+    padding: 0 30px;
+    color: #eeee;
+    width: 100%;
+    height: 280px;
+    background-color:#3F2F92;
+    
+  
+    border-radius: 30px;
+    
+  }
+  
+  .top-header p {
+    margin-top: 35px;
+    font-weight: 200;   
+  }
+  .top-header h2 {
+    padding: 5px 0;
+  }
+  .buttons {
+    display: flex;
+    margin-top: 50px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .btn {
+    padding: 10px 30px;
+    outline: 0;
+    border: 0;
+    color: #eeee;
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .btn.btn-call {
+    background: rgb(255, 73, 67);
+    width: 130px;
+  }
+  .btn.btn-send {
+    background: #21abab;
+    width: 130px;
+  }
+  .prevention {
+    display: flex;
+    justify-content: space-between;
+  }
+  .main {
+    margin-top: 20px;
+    padding: 0 20px;
+  }
+  .main h2 {
+    color: #393b44;
+  
+    margin-bottom: 20px;
+  }
+  .main h4 {
+    padding: 0 10px;
+    color: #393b44;
+  }
+  .prevention h4 {
+    color: #393b44;
+    font-weight: 400;
+  }
+  .prevention img {
+    width: 100px;
+    height: 100px;
+  }
+  .lower-header {
+    margin-top: 40px;
+    padding: 0 20px;
+    color: #eeee;
+    background-color: #3F2F92;
+    display: flex;
+    justify-content: space-between;
+   
+    border-radius: 30px;
+   
+  }
+  .lower-header img {
+
+    overflow: visible;
+    height: 100px;
+    width: 100px;
+  }
+  .tips {
+    padding: 5px;
+    line-height: 20px;
+    text-align: right;
+  }
+  .tips h2 {
+    font-weight: 500;
+  }
+
+  .qweqwe{
+
+    padding-top: 10px;
+  }
+
+  .new-background-color{
+    --background: #3F2F92;
+}
+.zz {
+
+    color: #22a8a8;
+}
+
+.b {
+   
+    font-weight: bold;
+   
+}
+.b1 {
+
+    
+    font-weight: bold;
+}
+.b3 {
+    color: #393b44;
+    
+    font-weight: bold;
+}
+
+.b2{
+    margin-top: 40px;
+
+}

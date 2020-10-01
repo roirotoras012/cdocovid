@@ -1,0 +1,86 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <link rel="stylesheet" href="main.css" />
+    <title>Ayuda</title>
+
+</head>
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+    <div class="flb">
+        <div class="wrapper">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <span>Loading</span>
+
+
+
+
+        </div>
+    </div>
+</div>
+<ion-header [translucent]="true">
+    <ion-toolbar color="black">
+
+
+        
+
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-icon name="notifications" class="zz"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="container " color="primary">
+    <div class="dashboard ">
+        <ion-label class="covidStats">
+            LIST OF SAP SECOND TRANCHE BENEFICIARIES FOR THE MUNICIPALITY OF CAGAYAN DE ORO CITY (CAPITAL), MISAMIS ORIENTAL.
+        </ion-label>
+    </div>
+    <input autocomplete="off" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+    <ion-card class="card">
+
+        <div class="horizontal-scroll">
+
+            <table class="mytable" id="myTable">
+
+                <tr>
+                    <th scope="col" (click)="sortBy('lname')">Last Name</th>
+                    <th scope="col" (click)="sortBy('fname')">First Name</th>
+                    <th scope="col" (click)="sortBy('mname')">Middle Name</th>
+                    <th scope="col" (click)="sortBy('category')">Category</th>
+                </tr>
+
+                <tr *ngFor="let data of datauser" [ngClass]=[data.claim_status]>
+
+                    <td>{{data.lname}}</td>
+                    <td>{{data.fname}}</td>
+                    <td>{{data.mname}}</td>
+                    <td>{{data.category}}</td>
+
+                </tr>
+
+            </table>
+
+
+        </div>
+
+    </ion-card>
+    <ion-card class="card1">
+    <div class="container">
+
+        <div class="asd">
+            <canvas id="ayudachart"></canvas>
+        </div>
+    </div>
+</ion-card>
+
+
+
+</ion-content>

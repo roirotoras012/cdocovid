@@ -1,0 +1,150 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <link rel="stylesheet" href="main.css" />
+    <title>Covid Cases</title>
+</head>
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+    <div class="flb">
+        <div class="wrapper">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <span>Loading</span>
+
+
+
+
+        </div>
+    </div>
+</div>
+<ion-header [translucent]="true">
+    <ion-toolbar color="black">
+
+
+        
+
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-icon name="notifications" class="zz"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary" [fullscreen]=" true " class="container ">
+
+    <div class="dashboard ">
+        <ion-label class="covidStats">
+            Statistics
+        </ion-label>
+    </div>
+    <div class="covid-switch">
+        <ion-segment [(ngModel)]="status">
+            <ion-segment-button class="sss" value="on">
+                <ion-label>My City</ion-label>
+            </ion-segment-button>
+            <ion-segment-button class="sss" value="up">
+                <ion-label>Barangay</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+
+
+
+    <div [hidden]="status != 'on'">
+
+        <ion-row>
+            <ion-col>
+
+                <ul class="covid-daily">
+                    <li>PUI:<b> {{pui.length}}</b></li>
+                    <li>PUM:<b> {{ pum.length}}</b></li>
+
+                </ul>
+
+                <div class="covid-box">
+                    <div class="box covid-affected">
+                        <ion-label>Affected</ion-label>
+                        <ion-label class="a">{{datauser.length}}</ion-label>
+                    </div>
+                    <div class="box covid-deaths">
+                        <ion-label>Death</ion-label>
+                        <ion-label class="a">{{death.length}}</ion-label>
+
+                    </div>
+                </div>
+                <div class="covid-box">
+                    <div class="box covid-recovered">
+                        <ion-label>Recovered</ion-label>
+                        <ion-label class="a">{{recover.length}}</ion-label>
+
+                    </div>
+                    <div class="box covid-active">
+                        <ion-label>Active</ion-label>
+                        <ion-label class="a">{{datauser.length-(death.length+recover.length)}}</ion-label>
+
+                    </div>
+                    <div class="box covid-serious">
+                        <ion-label>Serious</ion-label>
+                        <ion-label class="a">{{serious.length}}</ion-label>
+
+                    </div>
+                </div>
+                <div class="dashboard ">
+                    <ion-label class="covidStats">
+                        Daily New Cases
+                    </ion-label>
+                </div>
+                <ion-card class="card">
+                    <canvas id="covidchart"></canvas>
+
+
+                </ion-card>
+
+
+
+            </ion-col>
+
+        </ion-row>
+    </div>
+
+
+    <div [hidden]="status != 'up'">
+        <ion-row>
+            <ion-col>
+                <div class="barangay-cases">Cases By Barangay</div>
+                <table class="barangay-table" style="width: 250px;" cellpadding="1">
+                    <tbody>
+                        <tr *ngFor="let data of barangayObject">
+                            <td>{{data.barangay}}</td>
+                            <td>{{data.case}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <ion-card class="card">
+                    <canvas id="covidchart1"></canvas>
+
+
+                </ion-card>
+
+
+
+
+            </ion-col>
+        </ion-row>
+    </div>
+
+
+
+
+
+
+
+</ion-content>
